@@ -1,6 +1,7 @@
+import SearchBarComponent from "../SearchBarComponent/SearchBarComponent";
 import "./styles.css";
 
-function HeaderPageComponent() {
+function HeaderPageComponent({ handleSearch }) {
   return (
     <header id="fullSection">
       <section id="firstHeader">
@@ -8,13 +9,13 @@ function HeaderPageComponent() {
           <ul>
             <li>1</li>
             <li>2</li>
-            <li>3</li>
+            <SearchBarComponent handleSearch={handleSearch} />
             <li>4</li>
             <li>5</li>
           </ul>
         </nav>
       </section>
-      <section id="sectionHeader">
+      <section id="secondHeader">
         <nav>
           <ul>
             <li>6</li>
