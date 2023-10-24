@@ -2,4 +2,45 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+}
+
+#firstHeader {
+  flex: 3;
+}
+#secondHeader {
+  flex: 1;
+  background-color: red;
+}
+
+#firstHeader nav,
+#secondHeader nav {
+  height: 100%;
+}
+
+#fullSection ul {
+  list-style: none;
+}
+
+#firstHeader nav ul,
+#secondHeader nav ul {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#firstHeader nav ul li,
+#secondHeader nav ul li {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav ul li:hover {
+  border: 1px solid white;
+  cursor: pointer;
 }
