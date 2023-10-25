@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import "./styles.css";
 import useFetch from "../../Hooks/useFetch";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
-function SearchBarComponent({ handleSearch }) {
+function DeleteCategoryComponent() {
   const [filter, setFilter] = useState("");
   const { data, loading, error } = useFetch(
     "https://api.escuelajs.co/api/v1/categories"
@@ -12,6 +12,10 @@ function SearchBarComponent({ handleSearch }) {
 
   const [inputFocused, setInputFocused] = useState(false);
   const [selectFocused, setSelectFocused] = useState(false);
+  const [selectValue, setSelectValue] = useState("");
+  const [IDValue, setIDValue] = useState(null);
+
+  // console.log(data);
 
   const handleInputFocus = (focused) => {
     setInputFocused(focused);
@@ -21,21 +25,39 @@ function SearchBarComponent({ handleSearch }) {
     setSelectFocused(focused);
   };
 
-  // console.log("data");
-  // console.log(data);
+  const handleSelect = (e) => {
+    setSelectValue(e.target.value);
+  };
 
+  const getIDByCategory = () => {
+    data?.map((c) => {
+      if (c.name.toLowerCase() === selectValue.toLowerCase()) {
+        setIDValue(c.id);
+      }
+    });
+  };
 
-  const inputHandler = (e) => {
-    let lowerText = e.target.value.toLowerCase();
-    setFilter(lowerText);
+  const deleteCategory = () => {
+    axios
+      .delete(
+        `https://api.escuelajs.co/api/v1/categories/${IDValue}
+`
+      )
+      .then((resp) => console.log("Delete succesful"))
+      .catch((e) => {
+        console.log(`Hay un error: ${e}`);
+      });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleSearch(filter);
-    console.log("filter");
-    console.log(filter);
+    deleteCategory();
+    // handleSearch(filter);
   };
+
+  useEffect(() => {
+    getIDByCategory();
+  }, [selectValue]);
 
   return (
     <form
@@ -48,6 +70,8 @@ function SearchBarComponent({ handleSearch }) {
         id="searchSelect"
         onFocus={() => handleSelectFocus(true)}
         onBlur={() => handleSelectFocus(false)}
+        onChange={handleSelect}
+        value={selectValue}
       >
         <option key={0} value={"Todos los departamentos"}>
           {"Todos los departamentos"}
@@ -67,20 +91,11 @@ function SearchBarComponent({ handleSearch }) {
           <option>Loading...</option>
         )}
       </select>
-
-      <input
-        type="text"
-        id="searchInput"
-        placeholder="Buscar en e-Commerce.es"
-        onChange={inputHandler}
-        onFocus={() => handleInputFocus(true)}
-        onBlur={() => handleInputFocus(false)}
-      />
       <button className="searchBtn" type="submit">
-        Buscar
+        Eliminar
       </button>
     </form>
   );
 }
 
-export default SearchBarComponent;
+export default DeleteCategoryComponent;
