@@ -1,0 +1,4 @@
+#locationComponentSection {
+  display: flex;
+  flex-direction: column;
+}
