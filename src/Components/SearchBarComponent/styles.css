@@ -25,6 +25,14 @@ input {
   background-color: rgba(255, 255, 255, 0.9);
 }
 
+input:hover {
+  cursor: text;
+}
+
+select:hover {
+  cursor: pointer;
+}
+
 select {
   /* width: 100%; */
   /* max-width: 400px; */

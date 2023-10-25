@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import useReverseGeocoding from "../../Hooks/useReverseGeocoding";
+import "./styles.css";
 
 function GeolocationComponent() {
   const [userCoords, setUserCoords] = useState(null);
@@ -38,9 +39,12 @@ function GeolocationComponent() {
       {loading ? (
         <p>Cargando...</p>
       ) : (
-        <span>
-          Entrega en {locationData?.town} {locationData?.postcode}
-        </span>
+        <section id="locationSection">
+          <img src="/public/map-pin.svg" alt="" />
+          <span>
+            Entrega en {locationData?.town}, {locationData?.postcode}
+          </span>
+        </section>
       )}
     </section>
   );

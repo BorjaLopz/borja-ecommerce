@@ -1,0 +1,9 @@
+#locationSection {
+  display: flex;
+  flex-direction: row;
+}
+
+
+#locationSection span {
+  text-align: end;
+}
