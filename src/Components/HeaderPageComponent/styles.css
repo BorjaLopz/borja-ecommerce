@@ -22,7 +22,6 @@
   list-style: none;
 }
 
-#firstHeader nav ul,
 #secondHeader nav ul {
   height: 100%;
   display: flex;
@@ -31,11 +30,17 @@
   align-items: center;
 }
 
+#firstHeader nav ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 40% 1fr 1fr;
+  grid-template-rows: 1fr;
+  height: 100%;
+  align-items: center;
+}
+
 #firstHeader nav ul #searchForm {
   min-width: 500px;
 }
-
-
 
 #firstHeader nav ul li,
 #secondHeader nav ul li {
@@ -58,3 +63,5 @@ nav ul li:hover {
   border: 1px solid white;
   cursor: pointer;
 }
+
+
