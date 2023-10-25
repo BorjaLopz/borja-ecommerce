@@ -1,3 +1,5 @@
+import DeleteCategoryComponent from "../DeleteCategoryComponent/DeleteCategoryComponent";
+import GeolocationComponent from "../GeolocationComponent/GeolocationComponent";
 import SearchBarComponent from "../SearchBarComponent/SearchBarComponent";
 import "./styles.css";
 
@@ -8,10 +10,12 @@ function HeaderPageComponent({ handleSearch }) {
         <nav>
           <ul>
             <li>1</li>
-            <li>2</li>
+            <GeolocationComponent />
             <SearchBarComponent handleSearch={handleSearch} />
             <li>4</li>
             <li>5</li>
+            {/* Ponemos este componente por si tenemos que borrar alguna categoria. Cuando no haga falta se quedara comentado */}
+            {/* <DeleteCategoryComponent /> */}
           </ul>
         </nav>
       </section>
