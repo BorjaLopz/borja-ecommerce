@@ -3,6 +3,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-height: 12rem;
+  height: 10rem;
 }
 
 #firstHeader {
@@ -38,7 +40,7 @@
 
 #firstHeader nav ul {
   display: grid;
-  grid-template-columns: 1fr 1fr 40% 1fr 1fr;
+  grid-template-columns: 2fr 1fr 3fr 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 10px;
   height: 100%;
@@ -67,7 +69,7 @@
   padding-right: 10px;
 } */
 
-nav ul li:hover {
+nav ul .liNavMenu:hover {
   border: 1px solid white;
   cursor: pointer;
   /* margin: 5px; Agrega un margen pequeño al hacer hover */
@@ -75,6 +77,8 @@ nav ul li:hover {
 }
 
 #mainIconPage {
+  max-width: 10rem;
+  min-width: 6rem;
   width: 80%;
   margin: auto;
   box-sizing: border-box;
