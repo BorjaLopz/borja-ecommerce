@@ -1,5 +1,5 @@
 function ChangeLocationComponent() {
-  return <p>ChangeLocationComponent</p>;
+  return <button>Cambiar ubicación</button>;
 }
 
 export default ChangeLocationComponent;

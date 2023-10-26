@@ -1,11 +1,24 @@
+import { useState } from "react";
+
 import DeleteCategoryComponent from "../DeleteCategoryComponent/DeleteCategoryComponent";
 import LanguageComponent from "../LanguageComponent/LanguageComponent";
 import LocationComponent from "../LocationComponent/LocationComponent";
 import MainIconComponent from "../MainIconComponent/MainIconComponent";
 import SearchBarComponent from "../SearchBarComponent/SearchBarComponent";
 import "./styles.css";
+import LogInHeaderComponent from "../LogInHeaderComponent/LogInHeaderComponent";
 
 function HeaderPageComponent({ handleSearch }) {
+  const [elementoClickado, setElementoClickado] = useState(null);
+
+  const handleClick = (e) => {
+    setElementoClickado(e);
+  };
+
+  const handleClose = () => {
+    setElementoClickado(null);
+  };
+
   return (
     <header id="fullSection">
       <section id="firstHeader">
@@ -15,7 +28,7 @@ function HeaderPageComponent({ handleSearch }) {
             <LocationComponent />
             <SearchBarComponent handleSearch={handleSearch} />
             <LanguageComponent />
-            <li>5</li>
+            <LogInHeaderComponent />
             {/* Ponemos este componente por si tenemos que borrar alguna categoria. Cuando no haga falta se quedara comentado */}
             {/* <DeleteCategoryComponent /> */}
           </ul>
@@ -24,11 +37,11 @@ function HeaderPageComponent({ handleSearch }) {
       <section id="secondHeader">
         <nav>
           <ul>
-            <li>6</li>
-            <li>7</li>
-            <li>8</li>
-            <li>9</li>
-            <li>10</li>
+            <li className="liNavMenu">6</li>
+            <li className="liNavMenu">7</li>
+            <li className="liNavMenu">8</li>
+            <li className="liNavMenu">9</li>
+            <li className="liNavMenu">10</li>
           </ul>
         </nav>
       </section>

@@ -1,0 +1,43 @@
+.custom-select {
+  position: relative;
+  display: inline-block;
+}
+
+.custom-select select {
+  padding: 5px;
+  width: 150px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.custom-select .select-arrow {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.imageSelect {
+  max-width: 20px;  
+}
+
+#selectContainerLanguage {
+  display: flex;
+  justify-content: center;
+}
+
+.css-13cymwt-control {
+  max-width: 110px;
+}
+
+.css-art2ul-ValueContainer2 img{
+  margin-right: 0.4rem;
+  align-items: center;
+}
+
+.css-1dimb5e-singleValue div {
+  display: flex;
+}
